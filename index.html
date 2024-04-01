@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+    <style>
+     body{
+        background-color: #00DBDE;
+        background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+         min-height:100vh;
+
+        }
+        .container{
+            background-color: #ffff;
+            width:400px;
+            display:block;
+            margin:0 auto;
+            padding:10px;
+            border-radius:10px;
+
+        }
+        .app-title{
+            color:red;
+            text-align: center;
+        }
+        .number-input{
+            width:80%;
+            display: block;
+            margin:20px auto;
+            font-size: 20px;
+        }
+        .answer{
+            text-align: center;
+            font-size:20px;
+        }
+        .btn
+        {
+           width:150px;
+           display: inline-block;
+           margin:10px  auto;
+           font-size:20px;
+           background-color: red;
+           color:#ffff;
+           border-radius: 50px;
+           border:none;
+           padding:5px 10px;
+           cursor: pointer;
+           margin-left:8px;
+        }
+        @media screen and (max-width:768px){
+            .container{
+                width:90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="app-title">Calculate-Simple-Interest</h1>
+    <div class="container">
+     
+        <input type="text" placeholder="Enter-principle-amount" class="number-input" id="num1"/>
+        <input type="text" placeholder=" Enter-rate" class="number-input" id="num2"/>
+        <input type="text" placeholder=" Enter-number-of-year" class="number-input" id="num3"/>
+        <p class="answer" id="ans"></p>
+        <button type="button" class="btn" onclick="calculate();">Calculate</button> 
+        <button type="button" class="btn" onclick="reset();">Reset</button>
+    </div>
+    <script>
+        function calculate(){
+       const input1 = document.getElementById("num1");
+       const input2 = document.getElementById("num2");
+       const input3 = document.getElementById("num3");
+       const ansElement=document.getElementById("ans");
+
+       const SI=parseInt(input1.value)* parseInt(input2.value)* parseInt(input3.value) /100;
+       
+       ansElement.innerText=`Answer:${SI}`
+        //console.log(SI);
+        }
+        function reset(){
+            const input1 = document.getElementById("num1");
+            const input2 = document.getElementById("num2");
+            const input3 = document.getElementById("num3");
+            const ansElement=document.getElementById("ans");
+            input1.value="";
+            input2.value="";
+            input3.value="";
+            ansElement.innerText="";
+        } 
+        
+    </script>
+</body>
+</html>
